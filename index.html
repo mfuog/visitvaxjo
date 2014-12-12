@@ -28,7 +28,28 @@
 				<div id="page-middle-map-wrapper"></div>
 			</div>
 			<div id="page-right-wrapper">
-				<div id="page-right-hotel-wrapper">
+				<div id="page-left-weather-wrapper" class="service-element">
+					<h2>What is the forecast?</h2>
+					<p>Here is the local weather forecast for the next couple of days.</p>
+					<hr />
+					<div id="page-left-weather-forecast-wrapper"></div>
+				</div>
+
+				<div id="page-right-compare-wrapper" class="service-element">
+					<h2>Compare the weather</h2>
+					<p>Compare the weather in your city with the weather in Växjö. Enter your city's name and the date of weather comparison.</p>
+					<hr />
+					<form>
+						<input type="text" id="compare-town" placeholder="Berlin" />
+						<input type="text" id="compare-date" placeholder="11/12/2013" />
+						<button id="compare-submit-btn">Compare weather</button>
+						<div id="page-right-compare-result-wrapper"></div>
+					</form>
+				</div>
+			</div>
+			<div id="page-left-wrapper">
+				
+				<div id="page-right-hotel-wrapper" class="service-element">
 					<h2>Need a place to stay?</h2>
 					<p>Set a price range that fits your wallet and we will find a hotel in Växjö that suits you.</p>
 					<hr />
@@ -41,31 +62,14 @@
 					</form>
 					<div id="page-right-hotel-result-wrapper"></div>
 				</div>
-				<div id="page-right-compare-wrapper">
-					<h2>What about the weather?</h2>
-					<p>Compare the weather in your city with the weather in Växjö. Enter your city's name and the date of weather comparison.</p>
-					<hr />
-					<form>
-						<input type="text" id="compare-town" placeholder="Berlin" />
-						<input type="text" id="compare-date" placeholder="11/12/2013" />
-						<button id="compare-submit-btn">Compare weather</button>
-						<div id="page-right-compare-result-wrapper"></div>
-					</form>
-				</div>
-			</div>
-			<div id="page-left-wrapper">
-				<div id="page-left-disqus-wrapper">
+
+				<div id="page-left-disqus-wrapper" class="service-element">
 					<h2>Do you have something you want to discuss?</h2>
 					<p>This discussion thread is open for discussion.</p>
 					<hr />
 					<div id="disqus_thread"></div>
 				</div>
-				<div id="page-left-weather-wrapper">
-					<h2>What is the forecast?</h2>
-					<p>Here is the local weather forecast for the next couple of days.</p>
-					<hr />
-					<div id="page-left-weather-forecast-wrapper"></div>
-				</div>
+
 			</div>
 		</div>
 	</body>
