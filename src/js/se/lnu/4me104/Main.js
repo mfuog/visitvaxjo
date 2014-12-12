@@ -67,6 +67,8 @@ var Main = {
 	 */
 	weatherWidget : null,
 
+	restaurantWidget : null,
+
 	//---------------------------------------------------
 	//	Public static methods
 	//---------------------------------------------------
@@ -83,6 +85,7 @@ var Main = {
 		Main.hotelWidget 	= new HotelWidget();
 		Main.compareWidget 	= new CompareWidget();
 		Main.weatherWidget 	= new WeatherWidget();
+		Main.restaurantWidget 	= new RestaurantWidget();
 	}
 }
 
