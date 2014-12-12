@@ -163,7 +163,7 @@ function WeatherWidgetResult(day, icon, description) {
 				 result = "Sat";
 				 break;
 
-			case "Sunday":
+			case "SUNDAY":
 				 result = "Sun";
 				 break;
 		}
