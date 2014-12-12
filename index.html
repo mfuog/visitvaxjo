@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type"	content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="src/css/style.css" type="text/css" />
+
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+
+		<script type="text/javascript" src="src/js/se/lnu/4me104/service/Flickr.js"></script>
+		<script type="text/javascript" src="src/js/se/lnu/4me104/widget/hotel/HotelWidget.js"></script>
+		<script type="text/javascript" src="src/js/se/lnu/4me104/widget/hotel/HotelWidgetResult.js"></script>
+		<script type="text/javascript" src="src/js/se/lnu/4me104/widget/compare/CompareWidget.js"></script>
+		<script type="text/javascript" src="src/js/se/lnu/4me104/widget/compare/CompareWidgetResult.js"></script>
+		<script type="text/javascript" src="src/js/se/lnu/4me104/widget/map/MapWidget.js"></script>
+		<script type="text/javascript" src="src/js/se/lnu/4me104/widget/weather/WeatherWidget.js"></script>
+		<script type="text/javascript" src="src/js/se/lnu/4me104/widget/weather/WeatherWidgetResult.js"></script>
+		<script type="text/javascript" src="src/js/se/lnu/4me104/Main.js"></script>
+
+		<script src="http://visitvaxjo.disqus.com/embed.js" type="text/javascript" async="true"></script>
+
+		<title>Visit Växjö</title>
+	</head>
+
+	<body>
+		<div id="page-wrapper">
+			<div id="page-middle-wrapper">
+				<div id="page-middle-map-wrapper"></div>
+			</div>
+			<div id="page-right-wrapper">
+				<div id="page-right-hotel-wrapper">
+					<h2>Need a place to stay?</h2>
+					<p>Set a price range that fits your wallet and we will find a hotel in Växjö that suits you.</p>
+					<hr />
+					<form>
+						<p>Minimum price: €<span id="hotel-range-min-value">0</span></p>
+						<input type="range" min="0" max="200" id="hotel-range-min" value="0"></input>
+						<p>Maximum price: €<span id="hotel-range-max-value">200</span></p>
+						<input type="range" min="0" max="200" id="hotel-range-max" value="200"></input>
+						<button id="hotel-submit-btn">Find hotel</button>
+					</form>
+					<div id="page-right-hotel-result-wrapper"></div>
+				</div>
+				<div id="page-right-compare-wrapper">
+					<h2>What about the weather?</h2>
+					<p>Compare the weather in your city with the weather in Växjö. Enter your city's name and the date of weather comparison.</p>
+					<hr />
+					<form>
+						<input type="text" id="compare-town" placeholder="Berlin" />
+						<input type="text" id="compare-date" placeholder="11/12/2013" />
+						<button id="compare-submit-btn">Compare weather</button>
+						<div id="page-right-compare-result-wrapper"></div>
+					</form>
+				</div>
+			</div>
+			<div id="page-left-wrapper">
+				<div id="page-left-disqus-wrapper">
+					<h2>Do you have something you want to discuss?</h2>
+					<p>This discussion thread is open for discussion.</p>
+					<hr />
+					<div id="disqus_thread"></div>
+				</div>
+				<div id="page-left-weather-wrapper">
+					<h2>What is the forecast?</h2>
+					<p>Here is the local weather forecast for the next couple of days.</p>
+					<hr />
+					<div id="page-left-weather-forecast-wrapper"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
