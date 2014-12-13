@@ -78,7 +78,7 @@ function Flickr(APIKey) {
 	 *	@return {String}
 	 */
 	function buildQueryString(method, arguments) {
-		var URL  = "http://www.flickr.com/services/rest/?method="+method+"&api_key="+_APIKey+"&format=json&jsoncallback=?";
+		var URL  = "https://www.flickr.com/services/rest/?method="+method+"&api_key="+_APIKey+"&format=json&jsoncallback=?";
 		for (var property in arguments) {
 			URL += "&"+property+"="+arguments[property];
 		}
