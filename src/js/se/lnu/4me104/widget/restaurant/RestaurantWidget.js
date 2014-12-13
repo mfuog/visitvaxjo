@@ -81,8 +81,12 @@ function RestaurantWidget() {
 	 *
 	 *	@return {undefined}
 	 */
-	function searchResults() {
-		$.get("src/php/RestaurantService.php", onServiceCallComplete);
+	function searchResults(limit) {
+		serviceUrl = "src/php/RestaurantService.php";
+		if (limit != undefined) {
+			serviceUrl += "?limit=" + limit;
+		}
+		$.get(serviceUrl, onServiceCallComplete);
 	}
 
 	/**
@@ -105,7 +109,20 @@ function RestaurantWidget() {
 					businesses[i].image_url);
 			_restaurantWrapper.appendChild(restaurant.element);
 		}
+
+		createMoreButton();
 		createRemoveButton();
+	}
+
+	function createMoreButton() {
+		button = document.createElement("button");
+		button.innerHTML = "More";
+		google.maps.event.addDomListener(button, "click", function(event){
+			restaurantCount = $('#page-restaurant-result-wrapper .service-element').size();
+			removeResults();
+			searchResults((restaurantCount + 2));
+		});
+		_restaurantWrapper.appendChild(button);
 	}
 
 	function createRemoveButton() {

@@ -81,6 +81,9 @@ function RestaurantWidgetResult(name, ratingImgUrl, url, imgUrl) {
 
 	function initPic() {
 		_elmImg = document.createElement("img");
+		if (imgUrl == undefined) {
+			imgUrl = "http://localhost/lnu/visitvaxjo/src/img/restaurant-template.png";
+		}
 		_elmImg.setAttribute("src", imgUrl);
 		_a = document.createElement("a");
 		_a.setAttribute("href", url);

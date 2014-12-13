@@ -33,11 +33,11 @@ class RestaurantService {
      * @param    $location    The search location passed to the API
      * @return   The JSON response from the request
      */
-    public function getRestaurants($location) {
+    public function getRestaurants($limit) {
         $url_params = array();
 
-        $url_params['location'] = $location?: self::DEFAULT_LOCATION;
-        $url_params['limit'] = self::SEARCH_LIMIT;
+        $url_params['location'] = self::DEFAULT_LOCATION;
+        $url_params['limit'] = $limit?: self::SEARCH_LIMIT;
         $search_path = self::SEARCH_PATH . "?" . http_build_query($url_params);
 
         return $this->yelpRequest(self::API_HOST, $search_path);
@@ -91,4 +91,5 @@ class RestaurantService {
  * list of restaurants and return te response in JSON format.
  */
 $service  = new RestaurantService();
-print_r($service->getRestaurants(null, null));
+$limit = isset($_GET['limit'])?$_GET['limit']: 4;
+print_r($service->getRestaurants($limit));
