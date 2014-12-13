@@ -92,7 +92,7 @@ function WeatherWidgetResult(day, icon, description) {
 	 */
 	function initElement() {
 		_this.element = document.createElement("div");
-		_this.element.setAttribute("class", "page-left-weather-forecast-day-wrapper");
+		_this.element.setAttribute("class", "service-element");
 	}
 
 	/**

@@ -1,11 +1,4 @@
-.page-left-weather-forecast-day-wrapper {
-	width: 135px;
-	display: inline-table;
-	text-align: center;
-	padding: 5px;
-}
-
-.page-left-weather-forecast-day-wrapper p {
+.service-element p {
 	font-size: 11px;
 	margin-top: 5px;
 }
