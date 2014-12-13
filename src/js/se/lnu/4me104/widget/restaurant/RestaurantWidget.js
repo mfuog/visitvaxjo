@@ -21,7 +21,7 @@ function RestaurantWidget() {
 	 *
 	 *	@default {RestaurantWidgetResult}
 	 */
-	var _restaurantWrapper = document.getElementById("page-right-restaurant-wrapper");
+	var _restaurantWrapper = document.getElementById("page-restaurant-result-wrapper");
 
 	/**
 	 *	List containing the restaurant objects
@@ -67,8 +67,18 @@ function RestaurantWidget() {
 	 */
 	function onSubmitClick(event) {
 		event.preventDefault(); //do not send the form data
-		//removeResults();
+		removeResults();
 		searchResults();
+	}
+
+	/**
+	 *	This method removes the previous results from the
+	 *	DOM structure.
+	 *
+	 *	@return {undefined}
+	 */
+	function removeResults() {
+		_restaurantWrapper.innerHTML = "";
 	}
 
 	/**
@@ -94,11 +104,16 @@ function RestaurantWidget() {
 	 *	@return {undefined}
 	 */
 	function onServiceCallComplete(data) {
-		console.log("data:");
 		data = JSON.parse(data);
-		console.log(data);
-
-		//_resultTable.append(data);
+		businesses = data.businesses;
+		for (var i = 0; i < businesses.length; i++) {
+			restaurant = new RestaurantWidgetResult(
+					businesses[i].name,
+					businesses[i].rating_img_url,
+					businesses[i].url,
+					businesses[i].image_url);
+			_restaurantWrapper.appendChild(restaurant.element);
+		}
 	}
 
 	init();

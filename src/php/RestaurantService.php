@@ -19,7 +19,7 @@ class RestaurantService {
     const API_HOST = 'api.yelp.com';
     const DEFAULT_TERM = 'dinner';
     const DEFAULT_LOCATION = 'Växjö';
-    const SEARCH_LIMIT = 5;
+    const SEARCH_LIMIT = 4;
     const SEARCH_PATH = '/v2/search/';
 
     public function __construct() {}
