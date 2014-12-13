@@ -23,15 +23,6 @@ function RestaurantWidget() {
 	 */
 	var _restaurantWrapper = document.getElementById("page-restaurant-result-wrapper");
 
-	/**
-	 *	List containing the restaurant objects
-	 *	(RestaurantWidgetResult). This property is useful
-	 *	for deallocation.
-	 *
-	 *	@default {Array}
-	 */
-	var _restaurants = [];
-
 	//---------------------------------------------------
 	//	Private methods
 	//---------------------------------------------------
@@ -114,6 +105,16 @@ function RestaurantWidget() {
 					businesses[i].image_url);
 			_restaurantWrapper.appendChild(restaurant.element);
 		}
+		createRemoveButton();
+	}
+
+	function createRemoveButton() {
+		button = document.createElement("button");
+		button.innerHTML = "Remove results";
+		google.maps.event.addDomListener(button, "click", function(event){
+			_restaurantWrapper.remove(false);
+		});
+		_restaurantWrapper.appendChild(button);
 	}
 
 	init();
