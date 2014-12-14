@@ -3,7 +3,7 @@ require_once('lib/OAuth.php');
 
 /**
  *
- * The RestaurantService class allows to request a collection of five
+ * The RestaurantService class allows to request a collection
  * restaurants that are located in Växjö.
  * The data is retrieved querying the Yelp API.
  *
