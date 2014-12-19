@@ -86,6 +86,7 @@ var Main = {
 		Main.compareWidget 	= new CompareWidget();
 		Main.weatherWidget 	= new WeatherWidget();
 		Main.restaurantWidget 	= new RestaurantWidget();
+		Main.recentWidget 	= new RecentWidget();
 	}
 }
 
