@@ -55,7 +55,7 @@ function Tumblr(APIKey) {
 	 *
 	 *	@return {undefined}
 	 */
-	Tumblr.prototype.recommendedPost = function(callback) {
+	Tumblr.prototype.recommendedPosts = function(callback) {
 		var query = buildQueryString("tagged", { "tag": "växjö", "limit": 10 });
 		$.ajax({
 			url: query,

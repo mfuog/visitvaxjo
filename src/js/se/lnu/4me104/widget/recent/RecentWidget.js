@@ -43,7 +43,7 @@ function RecentWidget() {
 	 *	@return {undefined}
 	 */
 	function init() {
-		_tumblr.recommendedPost(onServiceCallComplete);
+		_tumblr.recommendedPosts(onServiceCallComplete);
 		initNext();
 	}
 
@@ -67,7 +67,7 @@ function RecentWidget() {
 	 */
 	function onNextClick(event) {
 		event.preventDefault(); //do not send the form data
-		_tumblr.recommendedPost(onServiceCallComplete);
+		_tumblr.recommendedPosts(onServiceCallComplete);
 	}
 
 	/**
@@ -88,7 +88,7 @@ function RecentWidget() {
 		// avoid adding the same post twice
 		if($('#tumblr_' + data.id).length >= 1 ){
 
-			_tumblr.recommendedPost(onServiceCallComplete);
+			_tumblr.recommendedPosts(onServiceCallComplete);
 		}else{
 			var post = new RecentWidgetResult(randomPost);
 			_recentWrapper.appendChild(post.element);
