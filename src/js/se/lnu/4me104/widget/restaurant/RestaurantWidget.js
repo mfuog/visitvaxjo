@@ -73,9 +73,9 @@ function RestaurantWidget() {
 	}
 
 	/**
-	 *	This method retrieves hotel-information from the
+	 *	This method retrieves restaurant-information from the
 	 *	local proxy. For more information see
-	 *	HotelService.php (src/php). The method uses
+	 *	RestaurantService.php (src/php). The method uses
 	 *	jQuery to perform the AJAX call, just like any
 	 *	other widget.
 	 *
