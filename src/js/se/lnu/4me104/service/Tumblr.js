@@ -48,8 +48,8 @@ function Tumblr(APIKey) {
 	};
 
 	/**
-	 *	Return a randomly selected post from Tumblr's database
-	 *	that was tagged 'växjö'.
+	 *	Return 10 posts from Tumblr's database
+	 *	that were tagged 'växjö'.
 	 *
 	 *	@param	{Function}	Callback function.
 	 *
@@ -62,8 +62,7 @@ function Tumblr(APIKey) {
 			dataType: "jsonp",
 			jsonp: "jsonp",
 			success: function(responseData){
-				random = Math.floor(Math.random() * 9) + 0;
-				callback(responseData.response[random]);
+				callback(responseData.response);
 			}
 		});
 	};

@@ -64,6 +64,7 @@ function RecentWidgetResult(post) {
 	function initElement() {
 		_this.element = document.createElement("div");
 		_this.element.setAttribute("class", "recent-element");
+		_this.element.setAttribute("id", "tumblr_" + post.id);
 	}
 
 	/**

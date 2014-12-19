@@ -67,7 +67,6 @@ function RecentWidget() {
 	 */
 	function onNextClick(event) {
 		event.preventDefault(); //do not send the form data
-		removePost();
 		_tumblr.recommendedPost(onServiceCallComplete);
 	}
 
@@ -80,10 +79,21 @@ function RecentWidget() {
 	function removePost() {
 		$('.recent-element').remove();
 	}
-	
+
 	function onServiceCallComplete(data) {
-		var post = new RecentWidgetResult(data);
-		_recentWrapper.appendChild(post.element);
+		postsCount = data.length;
+		random = Math.floor(Math.random() * postsCount-1) + 0;
+		randomPost = data[random];
+
+		// avoid adding the same post twice
+		if($('#tumblr_' + data.id).length >= 1 ){
+
+			_tumblr.recommendedPost(onServiceCallComplete);
+		}else{
+			var post = new RecentWidgetResult(randomPost);
+			_recentWrapper.appendChild(post.element);
+		}
+
 	}
 
 	init();
