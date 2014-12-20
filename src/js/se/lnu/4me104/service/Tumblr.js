@@ -81,7 +81,7 @@ function Tumblr(APIKey) {
 	 *	@return {String}
 	 */
 	function buildQueryString(method, arguments) {
-		var URL  = "http://api.tumblr.com/v2/"+method+"?";
+		var URL  = "https://api.tumblr.com/v2/"+method+"?";
 		for (var property in arguments) {
 			URL += "&"+property+"="+arguments[property];
 		}
